@@ -17,8 +17,64 @@ import {
   Team,
   TeamMember,
 } from "neal-react";
+import DropZoneComponent from 'react-dropzone-component'
+import Upload from './Upload'
 
-const brandName = "SamplePage";
+// Shims, for now:
+let
+  // Configuration and setup for DropZoneComponent
+  componentConfig = {
+    iconFiletypes: ['.jpg', '.png', '.gif', 'tif'],
+    showFiletypeIcon: true,
+    postUrl: '/uploadHandler'
+  },
+  eventHandlers = {
+    // This one receives the dropzone object as the first parameter
+    // and can be used to additional work with the dropzone.js
+    // object
+    init: null,
+    // All of these receive the event as first parameter:
+    drop: null,
+    dragstart: null,
+    dragend: null,
+    dragenter: null,
+    dragover: null,
+    dragleave: null,
+    // All of these receive the file as first parameter:
+    addedfile: null,
+    removedfile: null,
+    thumbnail: null,
+    error: null,
+    processing: null,
+    uploadprogress: null,
+    sending: null,
+    success: null,
+    complete: null,
+    canceled: null,
+    maxfilesreached: null,
+    maxfilesexceeded: null,
+    // All of these receive a list of files as first parameter
+    // and are only called if the uploadMultiple option
+    // in djsConfig is true:
+    processingmultiple: null,
+    sendingmultiple: null,
+    successmultiple: null,
+    completemultiple: null,
+    canceledmultiple: null,
+    // Special Events
+    totaluploadprogress: null,
+    reset: null,
+    queuecomplete: null
+    },
+    djsConfig = {
+      addRemoveLinks: true,
+      acceptedFiles: "image/jpeg,image/png,image/gif,image/tiff"
+    };
+
+// end local variables
+
+
+const brandName = "Scene:History";
 const brand = <span>{brandName}</span>;
 
 const onSignup = ({ name: name, email: email, password: password }) => Stripe.StripeHandler.open({
@@ -32,63 +88,31 @@ const onSignup = ({ name: name, email: email, password: password }) => Stripe.St
 const businessAddress = (
   <address>
     <strong>{brandName}</strong><br/>
-    1337 Market Street, Suite 1337<br/>
-    San Francisco, CA 94103<br/>
-    +1 (123) 456-7890
+    Saint Joseph's College<br/>
+    Rensselaer IN 47978<br/>
+    +1 (219) 866-6000
   </address>
 );
 
-const pricingPlan1 = {
-  name: "Personal",
-  description: "Describe your plans with easy-to-use pricing tables. Each plan provides callbacks to handle visitor clicks.",
-  price: "$99",
-  features: {
-    "Describe pricing plans as JSON": true,
-    "Features can be active/inactive": true,
-    "Works on mobile": true,
-    "Custom callbacks": true,
-    "Extra Feature 1": false,
-    "Extra Feature 2": false,
+
+const sampleCode = `  componentDidMount: function() {
+    this.loadRecordsFromServer();
+    // This polls the server; not quite sure why . . .
+    // setInterval(this.loadCommentsFromServer, this.props.pollInterval);
   },
-  onClick: onSignup,
-};
-
-const pricingPlan2 = Object.assign({}, pricingPlan1, {
-  price: "$499",
-  name: "Startup",
-  features: Object.assign({}, pricingPlan1.features, {
-    "Extra Feature 1": true,
-  }),
-});
-
-const pricingPlan3 = Object.assign({}, pricingPlan2, {
-  price: "$999",
-  name: "Enterprise",
-  features: Object.assign({}, pricingPlan2.features, {
-    "Extra Feature 2": true,
-  }),
-});
-
-const sampleCode = `<Page>
-  <Hero><h1>{ /* Content */ }</h1></Hero>
-  <Section heading="Hello!">
-    <HorizontalSplit padding="md"> { /* Content */ } </HorizontalSplit>
-  </Section>
-  <Section>
-    <Team>
-      <TeamMember name="Link" title="Co-founder" imageUrl="img/link.jpg"> { /* Description */ } </TeamMember>
-      <TeamMember name="Yoshi" title="Co-founder" imageUrl="img/yoshi.jpg"> { /* Description */ } </TeamMember>
-    </Team>
-  </Section>
-  <Section>
-    <PricingTable>
-      <PricingPlan {... pricingPlan1} />
-      <PricingPlan {... pricingPlan2} />
-      <PricingPlan {... pricingPlan3} />
-    </PricingTable>
-    <SignupInline onSubmit={onSignupCallback}/>
-  </Section>
-</Page>
+  render: function() {
+    return (
+      <div>
+        <center><h2>Current image data</h2></center>
+        <SearchBar />
+        <Griddle results={this.state.records}
+          columns={['title','filename', "description"]}
+          columnMetadata={customColumnMetadata}
+          showSettings={true}
+          />
+      </div>
+    )}
+  });
 `;
 
 
@@ -99,25 +123,25 @@ export default (props) => {
       <Navbar brand={brand}>
         <NavItem><Link to="Home" className="nav-link">Home</Link></NavItem>
         <NavItem dropdown={true}>
-          <DropdownToggle>Github</DropdownToggle>
+          <DropdownToggle>Other Pages</DropdownToggle>
           <DropdownMenu>
-            <a href="https://github.com/dennybritz/neal-react" className="dropdown-item" target="_blank">
-              Neal React
+            <a href="http://oscon-sb.saintjoe-cs.org:5000" className="dropdown-item" target="_blank">
+              Current Page
             </a>
-            <a href="https://github.com/dennybritz/neal-sample" className="dropdown-item" target="_blank">
-              Sample Page
+            <a href="http://oscon.saintjoe-cs.org:8000" className="dropdown-item" target="_blank">
+              Older page
             </a>
           </DropdownMenu>
         </NavItem>
       </Navbar>
 
-      <Hero backgroundImage="img/hero-bg-01.jpg"
+      <Hero backgroundImage="img/background.png"
         className="text-xs-center">
-        <h1 className="display-4"> Declarative Landing Pages for React.js </h1>
-        <p className="lead">Build a beautiful landing page in less than an hour.
+        <h1 className="display-4"> All about historical images </h1>
+        <p className="lead">This page built in less than an hour.
           No more redundant code. Easily extensible.</p>
         <p>
-          <a href="https://github.com/dennybritz/neal-react" target="_blank" className="btn btn-white">
+          <a href="https://github.com/Danilo-Zekovic/oscon16.git" target="_blank" className="btn btn-white">
             Get it on Github
           </a>
         </p>
@@ -134,6 +158,12 @@ export default (props) => {
 
       <Section className="nopad-bottom">
         <Code lang="jsx" block>{sampleCode}</Code>
+      </Section>
+
+      <Section>
+        <DropZoneComponent  config={componentConfig}
+                            eventHandlers={eventHandlers}
+                            djsConfig={djsConfig} />
       </Section>
 
       <Section>
@@ -168,14 +198,6 @@ export default (props) => {
       </Section>
 
       <Section>
-        <PricingTable>
-          <PricingPlan {... pricingPlan1} />
-          <PricingPlan {... pricingPlan2} />
-          <PricingPlan {... pricingPlan3} />
-        </PricingTable>
-      </Section>
-
-      <Section>
         <CustomerQuotes>
           <CustomerQuote name="Paul Graham" title="YC" imageUrl="img/people/paulgraham.jpg">
             <p>What I tell founders is not to sweat the business model too much at first. The most important task at first is to build something people want. If you don't do that, it won't matter how clever your business model is.</p>
@@ -204,9 +226,8 @@ export default (props) => {
       </Section>
 
       <Footer brandName={brandName}
-        facebookUrl="http://www.facebook.com"
-        twitterUrl="http://www.twitter.com/dennybritz"
-        githubUrl="https://github.com/dennybritz/neal-react"
+        facebookUrl="http://www.facebook.com/brian.capouch"
+        githubUrl="https://github.com/capouch"
         address={businessAddress}>
       </Footer>
     </Page>
