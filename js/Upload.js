@@ -14,7 +14,7 @@ let
   componentConfig = {
     iconFiletypes: ['.jpg', '.png', '.gif', 'tif'],
     showFiletypeIcon: true,
-    postUrl: '/uploadHandler'
+    postUrl: 'http://oscon-sb.saintjoe-cs.org:5000/uploadHandler'
   },
   eventHandlers = {
     // This one receives the dropzone object as the first parameter
@@ -59,6 +59,23 @@ let
       acceptedFiles: "image/jpeg,image/png,image/gif,image/tiff"
     };
 
+  class Upload extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return (
+        <div>
+        <DropZoneComponent  config={componentConfig}
+                            eventHandlers={eventHandlers}
+                            djsConfig={djsConfig} />,
+        </div>
+      );
+    }
+  }
+
+  export default Upload;
+
 // end local variables
 
 /* export class Page extends React.Component {
@@ -71,6 +88,7 @@ let
 */
 
 // public method
+/*
 export default function uploadInitModule ( $container ) {
 
   console.log("upload module reached");
@@ -84,3 +102,4 @@ export default function uploadInitModule ( $container ) {
 
   // console.log("upload initModule over");
   };
+  */

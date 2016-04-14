@@ -161,9 +161,7 @@ export default (props) => {
       </Section>
 
       <Section>
-        <DropZoneComponent  config={componentConfig}
-                            eventHandlers={eventHandlers}
-                            djsConfig={djsConfig} />
+        <Upload />
       </Section>
 
       <Section>
