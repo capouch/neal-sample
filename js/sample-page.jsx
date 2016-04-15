@@ -85,8 +85,8 @@ export default (props) => {
 
       <Hero backgroundImage="img/background.png"
         className="text-xs-center">
-        <h1 className="display-4"> All about historical images </h1>
-        <p className="lead">This page converted in about three hours.</p>
+        <h1 className="display-4">Scene: History </h1>
+        <p className="lead">Archiving and Presenting Historical Images</p>
         <p>
           <a href="https://github.com/capouch/neal-sample.git" target="_blank" className="btn btn-white">
             Get it on Github
