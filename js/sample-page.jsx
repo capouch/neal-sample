@@ -19,6 +19,7 @@ import {
 } from "neal-react";
 import DropZoneComponent from 'react-dropzone-component'
 import Upload from './Upload'
+import Browse from './Browse'
 
 // Shims, for now:
 let
@@ -162,6 +163,10 @@ export default (props) => {
 
       <Section>
         <Upload />
+      </Section>
+
+      <Section>
+        <Browse />
       </Section>
 
       <Section>
