@@ -149,7 +149,7 @@ export default (props) => {
 
       <Section className="subhero">
         <ImageList centered>
-          <ImageListItem src="img/press/cnn-logo.png" url="http://www.cnn.com"/>
+          <ImageListItem src="img/press/sjcLogo.png" url="http://www.saintjoe.edu"/>
           <ImageListItem src="img/press/forbes-logo.png" url="http://forbes.com/"/>
           <ImageListItem src="img/press/theverge-logo.png" url="http://www.theverge.com/"/>
           <ImageListItem src="img/press/techcrunch-logo.jpg" url="http://techcrunch.com/"/>

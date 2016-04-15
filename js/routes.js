@@ -60,8 +60,7 @@ configRoutes = function ( router, server ) {
   });
 
   // Fetch uploaded file handled by "storage" object in multer
-  router.options('/uploadHandler', cors(corsOptions));
-  router.post('/uploadHandler', storage.single('file'), cors(corsOptions), function(req, res) {
+  router.post('/uploadHandler', storage.single('file'), function(req, res) {
     console.log('\'bout to upload something ' + req.file);
     if (req.body) {
         console.log(req.body);
