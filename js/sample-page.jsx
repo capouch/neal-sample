@@ -139,8 +139,7 @@ export default (props) => {
       <Hero backgroundImage="img/background.png"
         className="text-xs-center">
         <h1 className="display-4"> All about historical images </h1>
-        <p className="lead">This page built in less than an hour.
-          No more redundant code. Easily extensible.</p>
+        <p className="lead">This page converted in about three hours.</p>
         <p>
           <a href="https://github.com/Danilo-Zekovic/oscon16.git" target="_blank" className="btn btn-white">
             Get it on Github
