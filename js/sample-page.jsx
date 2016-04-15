@@ -69,15 +69,18 @@ export default (props) => {
 
       <Navbar brand={brand}>
         <NavItem><Link to="Home" className="nav-link">Home</Link></NavItem>
-        <NavItem><Link to="Home" className="nav-link">Home Too</Link></NavItem>
+        <NavItem><Link to="Home" className="nav-link">Splash</Link></NavItem>
         <NavItem dropdown={true}>
           <DropdownToggle>Older versions</DropdownToggle>
           <DropdownMenu>
             <a href="http://oscon-sb.saintjoe-cs.org:5000" className="dropdown-item" target="_blank">
               2016 Page
             </a>
-            <a href="http://oscon.saintjoe-cs.org:8000" className="dropdown-item" target="_blank">
-              2015 page
+            <a href="http://oscon-sb.saintjoe-cs.org:5000" className="dropdown-item" target="_blank">
+              2016 Page
+            </a>
+            <a href="/oscon-test" className="dropdown-item" target="_blank">
+              GraphiQL 
             </a>
           </DropdownMenu>
         </NavItem>
