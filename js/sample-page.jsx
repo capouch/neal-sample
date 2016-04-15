@@ -108,7 +108,8 @@ export default (props) => {
       </Section>
 
       <Section>
-        <Upload />
+        <Upload
+          className="display-4"/>
       </Section>
 
       <Section>
