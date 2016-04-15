@@ -202,13 +202,13 @@ export default (props) => {
 
       <Section>
         <CustomerQuotes>
-          <CustomerQuote name="Paul Graham" title="YC" imageUrl="img/people/paulgraham.jpg">
+          <CustomerQuote name="Danilo Zekovic" title="Saint Joe" imageUrl="img/people/daniloOSCON.jpg">
             <p>What I tell founders is not to sweat the business model too much at first. The most important task at first is to build something people want. If you don't do that, it won't matter how clever your business model is.</p>
           </CustomerQuote>
           <CustomerQuote name="Elon Musk" imageUrl="img/people/elonmusk.jpg">
             <p>I came to the conclusion that we should aspire to increase the scope and scale of human consciousness in order to better understand what questions to ask. Really, the only thing that makes sense is to strive for greater collective enlightenment.</p>
           </CustomerQuote>
-          <CustomerQuote name="Reid Hoffman" title="Linkedin" imageUrl="img/people/reidhoffman.jpg">
+          <CustomerQuote name="Ben Davisson" title="Saint Joe" imageUrl="img/people/benOSCON.jpg">
             <p>If you are not embarrassed by the first version of your product, you've launched too late.</p>
           </CustomerQuote>
         </CustomerQuotes>
@@ -216,10 +216,10 @@ export default (props) => {
 
       <Section>
         <Team>
-          <TeamMember name="Member 1" title="Co-founder" imageUrl="img/people/grumpycat.jpg">
+          <TeamMember name="Member 1" title="Co-founder" imageUrl="img/people/boo.jpg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </TeamMember>
-          <TeamMember name="Member 2" title="Co-founder" imageUrl="img/people/boo.jpg">
+          <TeamMember name="Member 2" title="Co-founder" imageUrl="img/people/grumpycat.jpg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </TeamMember>
           <TeamMember name="Member 3" title="Co-founder" imageUrl="img/people/panda.jpg">
