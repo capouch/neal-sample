@@ -69,6 +69,7 @@ export default (props) => {
 
       <Navbar brand={brand}>
         <NavItem><Link to="Home" className="nav-link">Home</Link></NavItem>
+        <NavItem><Link to="Home" className="nav-link">Home Too</Link></NavItem>
         <NavItem dropdown={true}>
           <DropdownToggle>Other Pages</DropdownToggle>
           <DropdownMenu>
