@@ -20,11 +20,6 @@ var
     }
   }),
   storage = multer( {storage: storage });
-  var corsOptions = {
-    origin: '*'
-  };
-  var cors = require('cors');
-
 
 // --- End variable declarations
 
