@@ -113,7 +113,8 @@ export default (props) => {
       </Section>
 
       <Section>
-        <Browse />
+        <Browse
+          className = "display-4"/>
       </Section>
 
       <Section>
