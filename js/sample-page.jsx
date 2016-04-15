@@ -71,13 +71,13 @@ export default (props) => {
         <NavItem><Link to="Home" className="nav-link">Home</Link></NavItem>
         <NavItem><Link to="Home" className="nav-link">Home Too</Link></NavItem>
         <NavItem dropdown={true}>
-          <DropdownToggle>Other Pages</DropdownToggle>
+          <DropdownToggle>Older versions</DropdownToggle>
           <DropdownMenu>
             <a href="http://oscon-sb.saintjoe-cs.org:5000" className="dropdown-item" target="_blank">
-              Current Page
+              2016 Page
             </a>
             <a href="http://oscon.saintjoe-cs.org:8000" className="dropdown-item" target="_blank">
-              Older page
+              2015 page
             </a>
           </DropdownMenu>
         </NavItem>
