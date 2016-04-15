@@ -107,6 +107,8 @@ export default (props) => {
         <Code lang="jsx" block>{sampleCode}</Code>
       </Section>
 
+      // These next two sections will eventually go in their own Pages
+
       <Section>
         <Upload />
       </Section>
