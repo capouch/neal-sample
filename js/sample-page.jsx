@@ -165,20 +165,6 @@ export default (props) => {
         </CustomerQuotes>
       </Section>
 
-      <Section>
-        <Team>
-          <TeamMember name="Member 1" title="Co-founder" imageUrl="img/people/boo.jpg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </TeamMember>
-          <TeamMember name="Member 2" title="Co-founder" imageUrl="img/people/grumpycat.jpg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </TeamMember>
-          <TeamMember name="Member 3" title="Co-founder" imageUrl="img/people/panda.jpg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </TeamMember>
-        </Team>
-      </Section>
-
       <Footer brandName={brandName}
         facebookUrl="http://www.facebook.com/brian.capouch"
         githubUrl="https://github.com/capouch"
