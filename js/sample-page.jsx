@@ -88,7 +88,7 @@ export default (props) => {
         <h1 className="display-4"> All about historical images </h1>
         <p className="lead">This page converted in about three hours.</p>
         <p>
-          <a href="https://github.com/Danilo-Zekovic/oscon16.git" target="_blank" className="btn btn-white">
+          <a href="https://github.com/capouch/neal-sample.git" target="_blank" className="btn btn-white">
             Get it on Github
           </a>
         </p>
